@@ -1,0 +1,60 @@
+const BASE_URL =
+  'http://172.23.48.1:8080';
+
+export interface ApiOptions {
+  method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
+  body?: Record<string, any>;
+  headers?: Record<string, string>;
+}
+
+export async function apiCall<T>(
+  endpoint: string,
+  options: ApiOptions = {}
+): Promise<T> {
+
+  const {
+    method = 'GET',
+    body,
+    headers = {}
+  } = options;
+
+  const token =
+    typeof window !== 'undefined'
+      ? localStorage.getItem('auth_token')
+      : null;
+
+  const requestHeaders: Record<string, string> = {
+    'Content-Type': 'application/json',
+    ...headers,
+  };
+
+  if (token) {
+    requestHeaders['Authorization'] = `Bearer ${token}`;
+  }
+
+  const response = await fetch(
+    `${BASE_URL}${endpoint}`,
+    {
+      method,
+      headers: requestHeaders,
+      body: body
+        ? JSON.stringify(body)
+        : undefined,
+    }
+  );
+
+  if (!response.ok) {
+    const error = await response
+      .json()
+      .catch(() => ({
+        message: 'Unknown error',
+      }));
+
+    throw new Error(
+      error.message ||
+      `API error: ${response.status}`
+    );
+  }
+
+  return response.json();
+}
