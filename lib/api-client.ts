@@ -1,5 +1,5 @@
 const BASE_URL =
-  'http://172.23.48.1:8080';
+  'https://algopulse-backend-3knx.onrender.com';
 
 export interface ApiOptions {
   method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
