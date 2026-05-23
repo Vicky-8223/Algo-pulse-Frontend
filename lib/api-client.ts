@@ -27,11 +27,13 @@ export async function apiCall<T>(
     'Content-Type': 'application/json',
     ...headers,
   };
+  const isAuthEndpoint =
+  endpoint.startsWith('/api/auth/login') ||
+  endpoint.startsWith('/api/auth/register');
 
-  if (token) {
-    requestHeaders['Authorization'] = `Bearer ${token}`;
+  if (token && !isAuthEndpoint) {
+  requestHeaders['Authorization'] = `Bearer ${token}`;
   }
-
   const response = await fetch(
     `${BASE_URL}${endpoint}`,
     {
