@@ -62,13 +62,13 @@ export default function Home() {
           <div className="space-y-6 sm:space-y-8 animate-slide-in-left">
             <div className="space-y-4">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-balance leading-tight">
-                Master DSA with{' '}
+                Track Your Leetcode Progress here....{' '}
                 <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
-                  AI Insights
+                 ....
                 </span>
               </h1>
               <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-lg leading-relaxed">
-                Track your coding interview prep, identify patterns in weak areas, and get personalized recommendations powered by real-time analytics.
+                Track your coding prep, identify patterns in weak areas, and get personalized recommendations powered by real-time analytics.
               </p>
             </div>
 
@@ -161,7 +161,7 @@ export default function Home() {
       {/* Footer */}
       <div className="border-t border-border/40 bg-card/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 text-center text-muted-foreground">
-          <p className="text-sm sm:text-base">&copy; 2024 AlgoPulse. Track harder, learn smarter.</p>
+          <p className="text-sm sm:text-base">&copy; 2026 AlgoPulse. Track harder, learn smarter.</p>
         </div>
       </div>
     </div>
