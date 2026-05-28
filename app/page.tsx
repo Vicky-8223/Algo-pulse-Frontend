@@ -62,9 +62,9 @@ export default function Home() {
           <div className="space-y-6 sm:space-y-8 animate-slide-in-left">
             <div className="space-y-4">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-balance leading-tight">
-                Track Your Leetcode Progress here....{' '}
+                Track Your Leetcode Progress here{' '}
                 <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
-                 ....
+                 Algo Pulse
                 </span>
               </h1>
               <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-lg leading-relaxed">
